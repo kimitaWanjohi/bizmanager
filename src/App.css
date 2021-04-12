@@ -1,0 +1,23 @@
+
+.bg-grey{
+    width: 100%;
+    background-color: lightgrey;
+    padding: 0.2rem
+}
+.container-custom{
+    width: 100vw;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    margin:auto;
+    padding: .2em;
+    font-size: 1.2rem;
+}
+.pd-5{
+    padding: 5px;
+}
+
+.container-fluid-sm{
+    max-width: 50%;
+    margin: auto;
+}

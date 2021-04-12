@@ -7,11 +7,11 @@ export default function Layout({children, title}) {
     <div className="root">
         <header>
             <Link to="/">
-                <a>Home</a>
+                <h5>Home</h5>
             </Link>
             
             <Link to="/products">
-                <a>Products</a>
+                <h5>Products</h5>
             </Link>
         </header>
 
@@ -32,6 +32,7 @@ export default function Layout({children, title}) {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                width: 100%;
             }
             .head {
                 width: 100%;

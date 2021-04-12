@@ -10,15 +10,21 @@ export const ProductProvider = ({children}) => {
 
     const productValue = useMemo(() => ({products, setProducts}), [products, setProducts])
 
-    const getProducts = async()=>{
-        const retriveProducts = await localStorage.getItem("products")
-        await setProducts(JSON.parse(retriveProducts))
+    const getProducts = ()=>{
+        const retriveProducts = localStorage.getItem("products")
+        if(retriveProducts !== null){
+            setProducts(JSON.parse(retriveProducts))
+        }else{
+            setProducts([])
+        }
+
+
     }
 
     useEffect(() => {
-        
+    
         getProducts();
-    })
+    }, [])
 
     return(
         <ProductContext.Provider value={productValue}>
