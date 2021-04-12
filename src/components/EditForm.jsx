@@ -1,15 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react';
+import {saveProducts, ProductContext} from '../ProductContext';
 
-export default function EditForm({prodId}) {
+export default function EditForm({product}) {
+    const {products} = useContext(ProductContext);
     
-    const [name, setName] = useState('')
-    const [bPrice, setBPrice] = useState(0)
-    const [sPrice, setSPrice] = useState(0)
-    const [quantity, setQuantity] = useState(0)
+    const [name, setName] = useState(product.name)
+    const [bPrice, setBPrice] = useState(product.bPrice)
+    const [sPrice, setSPrice] = useState(product.sPrice)
+    const [quantity, setQuantity] = useState(product.quantity)
 
     const save =( event )=> {
         event.preventDefault()
-        
+        product.name = name;
+        product.bPrice = bPrice
+        product.sPrice = sPrice
+        product.quantity = quantity
+        console.log(product)
+        saveProducts(products)
     }
 
     return (
@@ -18,22 +25,22 @@ export default function EditForm({prodId}) {
                 <form onSubmit={save}>
                 <div className="pd-5">
                     <label sytle={{textAlign:'center'}}>Name:</label>
-                    <input className="form-control" type="text" onChange={(e)=> setName(e.target.value)} />
+                    <input placeholder={name} className="form-control" type="text" onChange={(e)=> setName(e.target.value)} />
                 </div>
 
                 <div className="pd-5">
                     <label sytle={{textAlign:'center'}}>Buying Price:</label>
-                    <input className="form-control" type="number" onChange={e=> setBPrice(e.target.value)} />
+                    <input placeholder={bPrice} className="form-control" type="number" onChange={e=> setBPrice(e.target.value)} />
                 </div>
 
                 <div className="pd-5">
                     <label sytle={{textAlign:'center'}}>Selling Price:</label>
-                    <input className="form-control" type="number" onChange={e=> setSPrice(e.target.value)} />
+                    <input placeholder={sPrice} className="form-control" type="number" onChange={e=> setSPrice(e.target.value)} />
                 </div>
                 
                 <div className="pd-5">
                 <   label sytle={{textAlign:'center'}}>Quantity:</label>
-                    <input className="form-control" type="number" onChange={e=> setQuantity(e.target.value)}/>
+                    <input placeholder={quantity} className="form-control" type="number" onChange={e=> setQuantity(e.target.value)}/>
                 </div>
                 <div className="pd-5">
                     <input type="submit" className="btn btn-warning rounded-pill" value="SAVE"/>
