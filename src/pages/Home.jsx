@@ -5,7 +5,9 @@ import Layout from '../components/Layout'
 export default function Home() {
     return (
         <Layout title="Home">
-            <p>this is the home page</p>
+            <div className="container-custom">
+                <img src="/hitman.png" width="1250px" alt="biz"/>
+            </div>
         </Layout>
     )
 }

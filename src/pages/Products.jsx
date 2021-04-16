@@ -10,7 +10,7 @@ export default function Products () {
     const {products, setProducts} = useContext(ProductContext)
     const [showAdd, setShowAdd] = useState(false)
 
-    const addProduct = async(newProd) => {
+    const addProduct = (newProd) => {
         let newProds = [...products, newProd]
         setProducts(newProds)
         saveProducts(newProds)

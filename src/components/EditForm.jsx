@@ -15,7 +15,6 @@ export default function EditForm({product}) {
         product.bPrice = bPrice
         product.sPrice = sPrice
         product.quantity = quantity
-        console.log(product)
         saveProducts(products)
     }
 

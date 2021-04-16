@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {ProductProvider} from './ProductContext';
+import {RecordProvider} from './RecordContext';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecordProvider>
+      <ProductProvider>
+        <App />
+      </ProductProvider>
+    </RecordProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

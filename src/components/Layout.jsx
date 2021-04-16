@@ -13,6 +13,9 @@ export default function Layout({children, title}) {
             <Link to="/products">
                 <h5>Products</h5>
             </Link>
+            <Link to="/records">
+                <h5>Records</h5>
+            </Link>
         </header>
 
         <div className="head">
@@ -23,7 +26,7 @@ export default function Layout({children, title}) {
         }
         
         <footer className="footer">
-            <h5> &copy; { new Date().getFullYear()} </h5>
+            <h5> &copy; { new Date().getFullYear()} designed by Overgroundtech</h5>
         </footer>
 
         <style> {`

@@ -21,3 +21,7 @@
     max-width: 50%;
     margin: auto;
 }
+.border-solid{
+    margin:auto;
+    border: solid black 1px;
+}
