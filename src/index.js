@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import {ProductProvider} from './ProductContext';
 import {RecordProvider} from './RecordContext';
+import {CategoryProvider} from './CategoryContext';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <RecordProvider>
+      <CategoryProvider>
       <ProductProvider>
         <App />
       </ProductProvider>
+      </CategoryProvider>
     </RecordProvider>
   </React.StrictMode>,
   document.getElementById('root')

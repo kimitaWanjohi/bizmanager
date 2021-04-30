@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Layout from './Layout';
-import SellProd from './SellProd';
+import TradeCategory from './TradeCategory';
 import CashOut from './CashOut'
 import {saveRecords} from '../RecordContext';
-
+import {CategoryContext} from '../CategoryContext';
 
 
 export default function DayTrade({record, products, records}) {
 
+    const {category} = useContext(CategoryContext)
     const[cashOut, setCashOut] = useState([])
     const [tProfit, setTprofit] = useState(0)
 
@@ -29,16 +30,26 @@ export default function DayTrade({record, products, records}) {
                     // eslint-disable-next-line no-new-wrappers
                     record.date !== new String( new Date()).slice(0, 16) ?(
                         <div className="col-md-4 border-solid card">
-                            date past!!!
+                            <h4 className="text-danger">date past!!!</h4>
                         </div>
                     ):
-                    (
-                        <div className="col-md-4 border-solid card">
+                    (  
+                        <div className="col-md-5 border-solid card ">
                         {
-                            products.map(product => (
-                                <SellProd product={product} record={record} records={records} key={product.id} products={products} cashOut={cashOut} setCashOut={setCashOut} />
-                            ))
-                        }
+                        category.map((category, index) => (
+                            <div className="pd-5" key={index}>
+                                <TradeCategory 
+                                products={products} 
+                                category={category}
+                                record={record}
+                                records={records}
+                                cashOut={cashOut}
+                                setCashOut={setCashOut}
+                                />
+                                <hr/>
+                            </div>
+                        
+                        ))}
                         </div>
                     )
                                     

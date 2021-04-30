@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Products from './pages/Products'
 import Records from './pages/Records'
 import Record from './pages/Record'
+import Category from './pages/Category'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/products" exact component={Products} />
         <Route path="/records" exact component={Records} />
         <Route path="/records/:id" exact component={Record}/>
+        <Route path="/category" exact component={Category} />
       </Switch>
     </Router>
 

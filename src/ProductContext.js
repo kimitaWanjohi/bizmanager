@@ -17,8 +17,6 @@ export const ProductProvider = ({children}) => {
         }else{
             setProducts([])
         }
-
-
     }
 
     useEffect(() => {

@@ -10,9 +10,14 @@ export default function Layout({children, title}) {
                 <h5>Home</h5>
             </Link>
             
+            <Link to="/category">
+                <h5>Category</h5>
+            </Link>
+                        
             <Link to="/products">
                 <h5>Products</h5>
             </Link>
+
             <Link to="/records">
                 <h5>Records</h5>
             </Link>
